@@ -1,2 +1,2 @@
-# log4j-ioc-detector
-A Simple Log4j Indicator of Compromise Linux Detector
+# log4j Linux IoC Detector
+A basic Bash script to detect log4j Indicator of Compromise (IoC) in Linux.
