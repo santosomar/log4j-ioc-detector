@@ -26,6 +26,6 @@ sudo find /var/log -name \*.gz -print0 | xargs -0 zgrep -E -i '\$(\{|%7B)jndi:(l
 
 
 echo "Searching for obfuscated variants"
-sudo find /var/log/ -type f -exec sh -c "cat {} | sed -e 's/\${lower://'g | tr -d '}' | egrep -I -i 'jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):'" \;
-sudo find /var/log/ -name '*.gz' -type f -exec sh -c "zcat {} | sed -e 's/\${lower://'g | tr -d '}' | egrep -i 'jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):'" \;
+sudo find /var/log/ -type f -exec sh -c "cat {} | sudo sed -e 's/\${lower://'g | tr -d '}' | sudo egrep -I -i 'jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):'" \;
+sudo find /var/log/ -name '*.gz' -type f -exec sh -c "zcat {} | sudo sed -e 's/\${lower://'g | tr -d '}' | sudo egrep -i 'jndi:(ldap[s]?|rmi|dns|nis|iiop|corba|nds|http):'" \;
 
